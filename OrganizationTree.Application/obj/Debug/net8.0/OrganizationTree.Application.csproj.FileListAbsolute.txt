@@ -1,0 +1,17 @@
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\bin\Debug\net8.0\OrganizationTree.Application.deps.json
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\bin\Debug\net8.0\OrganizationTree.Application.runtimeconfig.json
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\bin\Debug\net8.0\OrganizationTree.Application.dll
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\bin\Debug\net8.0\OrganizationTree.Application.pdb
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.csproj.AssemblyReference.cache
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.AssemblyInfoInputs.cache
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.AssemblyInfo.cs
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.csproj.CoreCompileInputs.cache
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.dll
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\refint\OrganizationTree.Application.dll
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.pdb
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\OrganizationTree.Application.genruntimeconfig.cache
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\ref\OrganizationTree.Application.dll
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\bin\Debug\net8.0\OrganizationTree.Domain.dll
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\bin\Debug\net8.0\OrganizationTree.Domain.pdb
+C:\Users\keksik\source\repos\OrganizationTree\OrganizationTree.Application\obj\Debug\net8.0\Organiza.68DB254A.Up2Date
