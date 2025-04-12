@@ -24,6 +24,16 @@ namespace OrganizationTree.Domain.Entity
         public ICollection<Department> Children { get; set; } = new List<Department>();
 
         // Приватный конструктор для EF Core
-        public Department() { }
+        public Department(string name, Guid? parentId, DepartmentType type, int orderNumber)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            ParentId = parentId;
+            Type = type;
+            OrderNumber = orderNumber;
+            Status = Status.Active;
+        }
+        //пустой для ef
+        protected Department() { }
     }
 }

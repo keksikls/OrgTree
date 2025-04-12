@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using static OrganizationTree.Domain.Exceptions.DepartmentException;
 
@@ -37,9 +38,6 @@ namespace OrganizationTree.Infrastructure.Services
 
         public async Task MoveAsync(Department department, Guid? newParentId)
         {
-            if (newParentId.HasValue && !await _repository.ExistsAsync(newParentId.Value))
-                throw new ParentDepartmentNotFoundException(newParentId.Value);
-
             department.ParentId = newParentId;
             department.OrderNumber = await _orderNumberGenerator.GetNextAsync(newParentId);
         }

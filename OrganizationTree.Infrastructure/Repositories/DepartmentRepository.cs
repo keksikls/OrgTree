@@ -17,12 +17,12 @@ namespace OrganizationTree.Infrastructure.Repositories
     {
         private readonly ApplicationDbContext _context;
 
-        public DepartmentRepository(ApplicationDbContext context)
+        public DepartmentRepository(ApplicationDbContext context, CancellationToken cancellationToken)
         {
             _context = context;
         }
 
-        public async Task AddAsync(Department department)
+        public async Task AddAsync(Department department, CancellationToken cancellationToken)
         {
             await _context.Departments.AddAsync(department);
         }
@@ -43,7 +43,7 @@ namespace OrganizationTree.Infrastructure.Repositories
             }
         }
 
-        public async Task<bool> ExistsAsync(Guid id)
+        public async Task<bool> ExistsAsync(Guid id, CancellationToken cancellationToken)
         {
             return await _context.Departments.AnyAsync(x => x.Id == id);
         }

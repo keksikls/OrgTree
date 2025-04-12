@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "v174s/Xd9iY=",
+  "dgSpecHash": "KsSF7V0iCuk=",
   "success": true,
   "projectFilePath": "C:\\Users\\keksik\\source\\repos\\OrganizationTree\\OrganizationTree.Infrastructure\\OrganizationTree.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\keksik\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\keksik\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\keksik\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\keksik\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\keksik\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\keksik\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\keksik\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

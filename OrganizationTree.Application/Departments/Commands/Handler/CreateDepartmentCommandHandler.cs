@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using OrganizationTree.Application.Common;
 using OrganizationTree.Application.DTO;
@@ -19,34 +20,43 @@ namespace OrganizationTree.Application.Departments.Commands.Handler
         private readonly IDepartmentFactory _factory;
         private readonly IDepartmentRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IValidator<CreateDepartmentCommand> _validator;
 
-        public CreateDepartmentCommandHandler(IDepartmentFactory factory, IDepartmentRepository repository, IMapper mapper)
+        public CreateDepartmentCommandHandler(IDepartmentFactory factory, IDepartmentRepository repository, IMapper mapper
+            ,IValidator<CreateDepartmentCommand> validator)
         {
             _factory = factory;
             _repository = repository;
             _mapper = mapper;
+            _validator = validator;
         }
 
         public async Task<ResultGen<Guid>> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
         {
-            if (string.IsNullOrEmpty(request.Name))
+            // Валидация команды
+            var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+            if (!validationResult.IsValid)
             {
-                return ResultGen<Guid>.Failure($"Name подразделения обезательно");
+                var errorMessages = validationResult.Errors
+                    .Select(e => e.ErrorMessage)
+                    .ToArray();
+
+                return ResultGen<Guid>.Failure(string.Join(", ", errorMessages));
+            }
+
+            // Проверка существования родителя
+            if (request.ParentId.HasValue &&
+                !await _repository.ExistsAsync(request.ParentId.Value, cancellationToken))
+            {
+                return ResultGen<Guid>.Failure("Родительское подразделение не найдено");
             }
             // мапим данные
             var department = _mapper.Map<Department>(request);
 
-            // Дополнительные проверки/логика
-            if (department.ParentId.HasValue &&
-                !await _repository.ExistsAsync(department.ParentId.Value))
-            {
-                return ResultGen<Guid>.Failure("Родительское подразделение не найдено");
-            }
-
-            await _repository.AddAsync(department);
+            await _repository.AddAsync(department, cancellationToken);
             await _repository.SaveChangesAsync(cancellationToken);
 
-            return department.Id;
+            return ResultGen<Guid>.Success(department.Id);
         }
     }
 }

@@ -21,17 +21,6 @@ namespace OrganizationTree.Infrastructure.Services
         public async Task<int> GetNextAsync(Guid? parentId)
         {
             await _semaphore.WaitAsync();
-
-            if (parentId.HasValue)
-            {
-                bool parentExists = await _repository.ExistsAsync(parentId.Value);
-                if (!parentExists)
-                {
-                    throw new ParentDepartmentNotFoundException(parentId.Value);
-                }
-            }
-
-            await _semaphore.WaitAsync();
             try
             {
                 var children = await _repository.GetChildrenAsync(parentId);

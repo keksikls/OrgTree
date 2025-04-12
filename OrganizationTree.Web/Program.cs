@@ -1,4 +1,6 @@
+using OrganizationTree.Application.Departments.Commands.FluentValidatator;
 using OrganizationTree.Web.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

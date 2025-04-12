@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.EntityFrameworkCore;
 using OrganizationTree.Application.Common.Mappings;
 using OrganizationTree.Application.Departments.Queries;
 using OrganizationTree.Application.Interfaces;
@@ -43,6 +45,14 @@ namespace OrganizationTree.Web.Extensions
             builder.Services.AddScoped<DepartmentController>();
 
             return builder;
+        }
+
+        public static IServiceCollection AddApplicationValidation(this IServiceCollection services)
+        {
+            services.AddFluentValidationAutoValidation();
+            services.AddFluentValidationClientsideAdapters();
+
+            return services;
         }
     }
 }
